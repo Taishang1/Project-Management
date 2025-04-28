@@ -1,0 +1,109 @@
+/* 隐藏多余的表单 */
+.card-body > form:empty,
+.card-body > div:empty,
+.card-body > table:empty {
+    display: none;
+}
+
+/* 基础变量 */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #eeeeee;
+    --shadow-color: rgba(0,0,0,0.1);
+}
+
+/* 夜间模式变量 */
+[data-theme="dark"] {
+    --primary-color: #4fa3e0;
+    --secondary-color: #34495e;
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --border-color: #2c2c2c;
+    --shadow-color: rgba(0,0,0,0.3);
+}
+
+/* 基础样式 */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.panel {
+    background: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px var(--shadow-color);
+    margin: 20px;
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th {
+    background: var(--secondary-color);
+    color: #ffffff;
+    padding: 15px;
+}
+
+.table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .panel {
+        margin: 10px;
+    }
+    
+    .panel-head {
+        padding: 15px;
+    }
+    
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-input {
+        max-width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* 主题切换按钮 */
+.theme-switch {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.theme-switch:hover {
+    transform: scale(1.1);
+} 
